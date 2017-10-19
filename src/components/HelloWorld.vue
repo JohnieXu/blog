@@ -17,6 +17,8 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <h2>Lorem ipsum dolor.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo ipsam facere dicta tenetur, autem soluta unde sint animi vero aperiam asperiores dolores sit consectetur eos, nam. Animi, labore, laudantium.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo ipsam facere dicta tenetur, autem soluta unde sint animi vero aperiam asperiores dolores sit consectetur eos, nam. Animi, labore, laudantium.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo ipsam facere dicta tenetur, autem soluta unde sint animi vero aperiam asperiores dolores sit consectetur eos, nam. Animi, labore, laudantium.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo ipsam facere dicta tenetur, autem soluta unde sint animi vero aperiam asperiores dolores sit consectetur eos, nam. Animi, labore, laudantium.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo ipsam facere dicta tenetur, autem soluta unde sint animi vero aperiam asperiores dolores sit consectetur eos, nam. Animi, labore, laudantium.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit explicabo ipsam facere dicta tenetur, autem soluta unde sint animi vero aperiam asperiores dolores sit consectetur eos, nam. Animi, labore, laudantium.</p>
   </div>
 </template>
 

@@ -1,23 +1,28 @@
 <template>
   <div id="app">
+    <v-header></v-header>
     <img src="./assets/logo2.jpg">
     <router-view/>
+    <v-scrollTop></v-scrollTop>
   </div>
 </template>
 
 <script>
+import Header from './components/Header'
+import ScrollTop from './components/ScrollTop'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'v-header': Header,
+    'v-scrollTop': ScrollTop
+  }
 }
 </script>
 
 <style>
+@import './common/common.scss';
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

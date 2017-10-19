@@ -1,0 +1,38 @@
+/* common class */
+.clearfix {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+		display: visible;
+	};
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  display: inline-block;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+}

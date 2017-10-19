@@ -1,0 +1,13 @@
+/* mixins */
+@mixin span($num: 24) {
+	display: inline-block;
+	width: percentage($num / 24);
+}
+@mixin flex($num: 1) {
+	flex: $num 0 0;
+}
+
+/* variables */
+$xs: 760px;
+$sm: 920px;
+$md: 1200px;
