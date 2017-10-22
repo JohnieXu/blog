@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <v-header></v-header>
-    <img src="./assets/logo2.jpg">
     <router-view/>
     <v-scrollTop></v-scrollTop>
   </div>

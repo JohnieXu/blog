@@ -3,44 +3,33 @@
     <div class="header--content-wrapper row">
       <div class="header--nav">
         <ul>
-          <li v-for="item in nav"><a href="" class="header--item-link">{{item.text}}</a></li>
+          <li v-for="item in nav"><a :href="item.url" class="header--item-link">{{item.text}}</a></li>
         </ul>
-        <!-- <ul class="nav-list">
-          <li class="nav-list--item"><a href=""><img src="http://iph.hfre.lu/60x60" alt="logo"></a></li>
-          <li class="nav-list--item"><a href="">item1</a></li>
-          <li class="nav-list--item"><a href="">item2</a></li>
-          <li class="nav-list--item"><a href="">item3</a></li>
-        </ul> -->
       </div>
       <div class="header--search">
         <el-input v-model="input" placeholder="请输入内容" icon="search" :on-icon-click="handleSearch"></el-input>
       </div>
     </div>
-    <!-- <div id="test" class="row">
-      <div class="flex1">1</div>
-      <div class="flex2">2</div>
-      <div class="flex3">3</div>
-    </div> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'header',
   props: {
     nav: {
       type: Array,
       default: () => [{
         text: 'Logo',
-        url: '',
+        url: '/',
         icon: ''
       }, {
         text: '首页',
-        url: '',
+        url: '/',
         icon: ''
       }, {
         text: '文章',
-        url: '',
+        url: '/article',
         icon: '',
         sub: [{
           text: 'html+css',
@@ -69,11 +58,11 @@ export default {
         }]
       }, {
         text: '项目',
-        url: '',
+        url: '/project',
         icon: ''
       }, {
         text: '关于我',
-        url: '',
+        url: '/about',
         icon: ''
       }]
     }
@@ -91,7 +80,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style type="stylesheet/scss" lang="scss" scoped>
   @import '../common/mixins.scss';
   $height: 36px;
@@ -128,16 +116,5 @@ export default {
       line-height: $height;
       padding: 0 $navGutter;
     }
-  }
-
-  /* test */
-  .flex1 {
-    @include flex(1);
-  }
-  .flex2 {
-    @include flex(9);
-  }
-  .flex3 {
-    @include flex(14);
   }
 </style>
