@@ -63,6 +63,7 @@ export default {
   $navGutter: 10px;
   $bgColor: #add8e6;
   .card {
+    text-align: left;
     .card--cover {
 
     }

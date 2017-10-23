@@ -29,7 +29,7 @@ export default {
         icon: ''
       }, {
         text: '文章',
-        url: '/article',
+        url: '/articles',
         icon: '',
         sub: [{
           text: 'html+css',
@@ -89,6 +89,7 @@ export default {
   .header {
     width: 100%;
     background: $bgColor;
+    text-align: center;
     .header--content-wrapper {
       width: 80%;
       max-width: 1000px;

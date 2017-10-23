@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/index'
-import store from './router/index'
+import store from './store/index'
 import ElementUI from 'element-ui'
 // import skins from './common/skins.js'
 import 'element-ui/lib/theme-default/index.css'
