@@ -10,8 +10,9 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/googlecode.css'
 // import skins from './common/skins.js'
 import 'element-ui/lib/theme-default/index.css'
+import 'font-awesome/css/font-awesome.min.css'
+import '~static/css/normalize.min.css'
 // import './common/common.scss'
-// normalize.css
 
 Vue.config.productionTip = false
 

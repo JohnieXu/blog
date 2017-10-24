@@ -26,9 +26,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'card',
   props: {
+    article: {},
     title: {
       type: String,
       default: 'title'
@@ -48,9 +50,17 @@ export default {
       
     }
   },
+  computed: {
+    ...mapGetters([
+      'shownArticles'
+    ])
+  },
+  mounted() {
+    this.$store.dispatch('getArticles')
+  },
   methods: {
     handleClick() {
-      console.log('click')
+      $router.push(`/articles/${shownArticles[key].name.replace(/\.md/, '')}`)
     }
   }
 }

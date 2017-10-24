@@ -1,7 +1,7 @@
 <template>
   <div id="article">
     <el-row>
-      <el-col class="article--box" :xs="24" :sm="12" :md="8" :lg="8" v-for="item in 5" :key="item">
+      <el-col class="article--box" :xs="24" :sm="12" :md="8" :lg="8" v-for="item in shownArticles" :key="item.name">
         <v-card></v-card>
       </el-col>
     </el-row>
@@ -9,10 +9,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
   export default {
     name: 'Article',
     components: {
       'v-card': () => import('@/components/Card')
+    },
+    computed: {
+      ...mapGetters([
+        'shownArticles'
+      ])
+    },
+    mounted() {
+      this.$store.dispatch('getArticles')
     }
   }
 </script> 

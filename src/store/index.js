@@ -6,6 +6,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   debug: true,
   state: {
+    // viewport: 'lg',
+    navShow: false,
     headerShow: true,
     headerFixed: false,
     allArticles: [],
@@ -17,10 +19,17 @@ const store = new Vuex.Store({
     /**
      * 切换header显示
      */
-    toggleHeader() {
+    TOGGLE_HEADER() {
       this.state.headerFixed = !this.state.headerFixed
       // debug && console.log('headerShow: ' + this.state.headerShow)
     },
+    /**
+     * get the size of viewport
+     * @return {String} size of viewport, lg:>1200px md:>992px sm:>768px xs:<768px
+     */
+    // GET_VIEWPORT(size) {
+
+    // },
     GET_ALL_ARTICLES (_state, allArticles) {
       _state.allArticles = allArticles
     },

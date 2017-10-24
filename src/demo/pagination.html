@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>pagination</title>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style class="stylish" type="text/less">
+    ::selection {
+      background: #262a30;
+      color: #fff;
+    }
+  </style>
+  <style class="stylish" type="text/less">
+   body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 2;
+    color: #555;
+    font-family: 'Monda', "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #efefef;
+   }
+   ul {
+    padding: 0;
+   }
+   li {
+    list-style: none;
+   }
+   a {
+    text-decoration: none;
+    color: inherit;
+   }
+   
+   .pagination {
+     color: #555;
+     .list {
+       margin: 40px auto;
+       text-align: center;
+     }
+     .list-item {
+       display: inline-block;
+       text-align: center;
+       .link {
+         display: inline-block;
+         margin: 0 10px;
+         padding: 0 10px;
+         font-size: 14px;
+         line-height: 30px;
+         &.link--active {
+           background: #ccc;
+           color: #fff;
+         }
+         &:hover {
+           border-bottom: 1px solid #222;
+         }
+       }
+     }
+   }
+
+   /* more thatn 992px => md lg */
+   @media all and (min-width: 992px) {
+     
+   }
+
+    /* less than 992px => xs sm */
+    @media all and (max-width: 992px) {
+      
+    }
+    
+  </style>
+  <script src="https://cdn.bootcss.com/less.js/3.0.0-pre.4/less.min.js"></script>
+  <script>less.watch();</script>
+</head>
+<body>
+  <div class="pagination">
+    <ul class="list">
+      <li class="list-item"><a class="link" href=""><i class="icon fa fa-angle-left"></i></a></li>
+      <li class="list-item"><a class="link link--active" href="">1</a></li>
+      <li class="list-item"><a class="link" href="">2</a></li>
+      <li class="list-item"><a class="link" href="">3</a></li>
+      <li class="list-item"><a class="link" href="">4</a></li>
+      <li class="list-item"><a class="link" href="">5</a></li>
+      <li class="list-item"><a class="link" href=""><i class="icon fa fa-angle-right"></i></a></li>
+    </ul>
+  </div>
+</body>
+</html>
