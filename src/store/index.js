@@ -89,7 +89,6 @@ const store = new Vuex.Store({
       return _state.selectedTag
     }
   }
-  }
 })
 
 export default store

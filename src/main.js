@@ -5,6 +5,7 @@ import App from './App'
 import router from './router/index'
 import store from './store/index'
 import ElementUI from 'element-ui'
+import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 // import skins from './common/skins.js'
 import 'element-ui/lib/theme-default/index.css'
 // import './common/common.scss'
@@ -13,6 +14,8 @@ import 'element-ui/lib/theme-default/index.css'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+
+OfflinePluginRuntime.install()
 
 /* eslint-disable no-new */
 new Vue({
