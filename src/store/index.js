@@ -7,6 +7,7 @@ const store = new Vuex.Store({
   debug: true,
   state: {
     headerShow: true,
+    headerFixed: false,
     allArticles: [],
     shownArticles: [],
     allTags: [],
@@ -17,8 +18,8 @@ const store = new Vuex.Store({
      * 切换header显示
      */
     toggleHeader() {
-      this.state.headerShow = !this.state.headerShow
-      debug && console.log('headerShow: ' + this.state.headerShow)
+      this.state.headerFixed = !this.state.headerFixed
+      // debug && console.log('headerShow: ' + this.state.headerShow)
     },
     GET_ALL_ARTICLES (_state, allArticles) {
       _state.allArticles = allArticles

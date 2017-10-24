@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header :input="''"></v-header>
     <router-view/>
     <v-scrollTop></v-scrollTop>
   </div>
@@ -9,7 +9,6 @@
 <script>
 import Header from './components/Header'
 import ScrollTop from './components/ScrollTop'
-import hljs from 'highlight.js/lib/index.js'
 export default {
   name: 'app',
   components: {
@@ -17,7 +16,7 @@ export default {
     'v-scrollTop': ScrollTop
   },
   mounted() {
-    hljs.initHighlightingOnLoad()
+
   }
 }
 </script>

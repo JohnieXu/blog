@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :class="{'header__fixed': fixed}">
     <div class="header--content-wrapper row">
       <div class="header--nav">
         <ul>
@@ -65,11 +65,19 @@ export default {
         url: '/about',
         icon: ''
       }]
+    },
+    input: {
+      type: String
     }
   },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      
+    }
+  },
+  computed: {
+    fixed() {
+      return this.$store.state.headerFixed
     }
   },
   methods: {
@@ -90,6 +98,14 @@ export default {
     width: 100%;
     background: $bgColor;
     text-align: center;
+    &.header__hide {
+      display: none;
+    }
+    &.header__fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
     .header--content-wrapper {
       width: 80%;
       max-width: 1000px;
