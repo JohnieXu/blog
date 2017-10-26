@@ -8,10 +8,11 @@
       </div>
       <div class="site-nav-container">
         <ul id="menu" class="header__menu">
-          <li class="menu-item menu-item--active"><a href=""><i class="menu-item__icon fa fa-home"></i>首页</a></li>
+          <li class="menu-item" :class="{'menu-item--active': item.active}" v-for="item in nav" :key="item.text"><router-link :to="item.url" v-if="item.url" exact><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</router-link><a href="javascript:void(0);" v-if="!item.url"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</a></li>
+          <!-- <li class="menu-item menu-item--active"><a href=""><i class="menu-item__icon fa fa-home"></i>首页</a></li>
           <li class="menu-item"><a href=""><i class="menu-item__icon fa fa-folder"></i>文章</a></li>
           <li class="menu-item"><a href=""><i class="menu-item__icon fa fa-tags"></i>标签</a></li>
-          <li class="menu-item"><a href=""><i class="menu-item__icon fa fa-search"></i>搜索</a></li>
+          <li class="menu-item"><a href=""><i class="menu-item__icon fa fa-search"></i>搜索</a></li> -->
         </ul>
         <div id="search-container" class="header__inner__search">search...</div>
       </div>
@@ -26,17 +27,14 @@ export default {
     nav: {
       type: Array,
       default: () => [{
-        text: 'Logo',
-        url: '/',
-        icon: ''
-      }, {
         text: '首页',
         url: '/',
-        icon: ''
+        icon: 'home',
+        active: true
       }, {
         text: '文章',
         url: '/articles',
-        icon: '',
+        icon: 'folder',
         sub: [{
           text: 'html+css',
           url: '',
@@ -64,12 +62,16 @@ export default {
         }]
       }, {
         text: '项目',
-        url: '/project',
-        icon: ''
+        url: '/works',
+        icon: 'book'
+      },{
+        text: '标签',
+        url: '/tags',
+        icon: 'tags'
       }, {
-        text: '关于我',
-        url: '/about',
-        icon: ''
+        text: '搜索',
+        url: '',
+        icon: 'search'
       }]
     },
     input: {
@@ -104,12 +106,15 @@ export default {
   .header {
    position: relative;
    margin: 0 auto;
+   z-index: 9;
   }
   .header__inner {
+    background: #fff;
    .site-brand-container {
       padding: 20px 0;
       color: #fff;
-      background: #222;
+      // background: #222;
+      background: $dark;
     }
   }
   .site-brand-container {
@@ -136,32 +141,48 @@ export default {
         position: relative;
         display: inline-block;
         box-sizing: border-box;
-        padding: 5px 20px;
+        width: 100%;
+        padding: 10px 20px;
         text-align: left;
         line-height: inherit;
         transition: background-color 0.2s ease;
         font-size: 14px;
+        &.router-link-active {
+          background: #F9F9F9;
+          &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            width: 6px;
+            height: 6px;
+            margin-top: -6px;
+            border-radius: 50%;
+            background-color: #bbb;
+          }
+        }
       }
       &:hover {
         background: #F9F9F9;
       }
-   }
-    .menu-item--active {
-      background: #F9F9F9;
     }
-    .menu-item--active:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      width: 6px;
-      height: 6px;
-      margin-top: -6px;
-      border-radius: 50%;
-      background-color: #bbb;
-    } 
+    // .menu-item--active {
+    //   background: #F9F9F9;
+    // }
+    // .menu-item--active:after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 50%;
+    //   right: 15px;
+    //   width: 6px;
+    //   height: 6px;
+    //   margin-top: -6px;
+    //   border-radius: 50%;
+    //   background-color: #bbb;
+    // } 
     .menu-item__icon {
       margin-right: 10px;
+      color: $light-blue;
     }
   }
   #search-container {
@@ -225,6 +246,9 @@ export default {
      font-size: 24px;
      line-height: 24px;
      cursor: pointer;
+     &:hover {
+      color: $light-blue;
+     }
    }
   }
   .header__inner__logo {

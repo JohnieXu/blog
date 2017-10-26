@@ -4,6 +4,20 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const OfflinePlugin = require('offline-plugin')
+const hljs = require('highlight.js')
+const markdown = require('markdown-it')({
+  /* highligh markdown https://github.com/markdown-it/markdown-it */
+  highlight: function(str, lang) {
+    if(lang && hljs.getLanguage(lang)) {
+      try {
+        return '<pre class="hljs"><code>' + hljs.highlight(lang, str, true).value + '</code></pre>'
+      } catch(__) {}
+    }
+    return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(str) + '</code></pre>'
+  },
+  /* wrap markdown with article https://npm.taobao.org/package/vue-markdown-loader */
+  wrapper: 'article'
+})
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -79,9 +93,7 @@ module.exports = {
       {
         test: /\.md$/,
         loader: 'vue-markdown-loader',
-        options: {
-          wrapper: 'article'
-        }
+        options: markdown
       }
     ]
   },

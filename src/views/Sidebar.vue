@@ -15,7 +15,11 @@
         </div>
       </div>
       <div class="sidebar__classes">
-        
+        <ul class="list row">
+          <li class="list-item col"><a href=""><span class="count">count</span><span class="classname">class</span></a></li>
+          <li class="list-item col"><a href=""><span class="count">count</span><span class="classname">class</span></a></li>
+          <li class="list-item col"><a href=""><span class="count">count</span><span class="classname">class</span></a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -25,14 +29,15 @@
 
   }
 </script>
-<style type="stylesheet/scss" lang="scss">
+<style type="stylesheet/scss" lang="scss" scoped>
+  @import '../common/mixins.scss';
   .sidebar {
     width: 240px;
     text-align: center;
     background: #fff;
-    @media all and (min-width: 992px) {
-      display: none;
-    }
+    // @media all and (max-width: 992px) {
+    //   display: none;
+    // }
   }
   .sidebar__inner {
     padding: 20px 10px;
@@ -48,19 +53,20 @@
       border: 1px solid #eee;
     }
     .nickname {
-      margin: 0;
+      margin: 10px auto;
       color: #222;
       font-size: 16px;
       font-weight: 600;
     }
     .desc {
-      margin-top: 0;
+      margin: 0;
       line-height: 1.2;
       text-align: center;
       font-size: 14px;
       color: #999;
     }
     .links {
+      margin-bottom: 10px;
       text-align: left;
       &:after {
         content: "";
@@ -78,11 +84,38 @@
       }
       a {
         display: block;
-        padding: 0 10px;
+        padding: 5px 10px;
         font-size: 14px;
       }
       .icon {
         margin-right: 10px;
+        color: $light-blue;
+      }
+    }
+  }
+  .sidebar__classes {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    .list-item {
+      border-right: 1px solid #eee;
+      &:last-child {
+        border: none;
+      }
+      &:hover {
+        .count {
+          color: $text-gray-hover;
+        }
+      }
+      .count {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-gray-main;
+      }
+      .classname {
+        display: block;
+        font-size: 14px;
+        color: $text-gray;     
       }
     }
   }

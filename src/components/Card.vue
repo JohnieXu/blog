@@ -1,66 +1,60 @@
 <template>
   <div class="card">
-    <!-- <el-row> -->
-      <!-- <el-col> -->
-        <el-card>
-          <img class="card--cover" src="http://iph.href.lu/200x160" :alt="'card image'">
-          <slot name="article">
-            <h3 class="card--title"><a href=""><span class="card--title__hover">#</span>{{title}}<span class="card--title--type">{{type}}</span></a></h3>
-            <p class="card--desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere corrupti illo incidunt. Quo tenetur adipisci natus totam eum amet autem animi, voluptates. Repellendus, ab rerum, laudantium quidem quae voluptatem sapiente.</p>
-            <div class="card--bottom clearfix">
-              <div class="card--bottom--meta">
-                <div class="card--bottom--meta--date">
-                  <time>{{date}}</time>
-                </div>
-                <div class="card--bottom--meta--tags">
-                  <span v-for="tag in 3">{{tag}}</span>
-                </div>
-              </div>
-              <el-button :plain="true" type="info" class="card--bottom--btn" @click="handleClick">阅读</el-button>
-            </div>
-          </slot>
-        </el-card>
-      <!-- </el-col> -->
-    <!-- </el-row> -->
+    <v-image :text="shownArticles[index].name.replace(/\.md/, '')" :imageUrl="require(`~articles/imgs/${shownArticles[index].cover}`)" :url="shownArticles[index].name.replace(/\.md/, '')"></v-image>
+    <slot name="article">
+      <!-- <h3 class="card__title"><a href=""><span class="card__title--hover">#</span>{{title}}<span class="card__title__type">{{type}}</span></a></h3> -->
+      <p class="card__desc">{{shownArticles[index].desc}}</p>
+      <div class="card__bottom clearfix">
+        <div class="card__bottom__meta">
+          <div class="card__bottom__meta__date">
+            <time>{{shownArticles[index].date}}</time>
+          </div>
+          <div class="card__bottom__meta__tags">
+            <span v-for="tag in shownArticles[index].tags">{{tag}}</span>
+          </div>
+        </div>
+        <el-button :plain="true" type="info" class="card__bottom__btn" @click="handleClick">阅读</el-button>
+      </div>
+    </slot>
   </div>
 </template>
 
 <script>
+import Image from '~components/Image'
 import { mapGetters } from 'vuex'
 export default {
   name: 'card',
   props: {
-    article: {},
-    title: {
-      type: String,
-      default: 'title'
-    },
+    index: Number,
     type: {
       type: String,
       default: ''
-    },
-    date: {
-      type: Date,
-      default: () => new Date()
     },
     tags: []
   },
   data () {
     return {
-      
+      // cover: '../../articles/imgs/' + this.shownArticles[this.index].cover,
+      // date: Date.now(),
     }
   },
   computed: {
     ...mapGetters([
       'shownArticles'
-    ])
+    ]),
+    date() {
+      return Date.now()
+    }
+  },
+  components: {
+    'v-image': Image
   },
   mounted() {
     this.$store.dispatch('getArticles')
   },
   methods: {
     handleClick() {
-      $router.push(`/articles/${shownArticles[key].name.replace(/\.md/, '')}`)
+      this.$router.push(`/articles/${this.shownArticles[this.index].name.replace(/\.md/, '')}`)
     }
   }
 }
@@ -73,39 +67,55 @@ export default {
   $navGutter: 10px;
   $bgColor: #add8e6;
   .card {
+    padding: 15px;
     text-align: left;
-    .card--cover {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background: #fff;
+    color: #2c3e50;
+    .card__cover {
 
     }
-    .card--title {
+    .card__title {
       font-size: 24px;
       font-weight: bold;
       color: #333;
+      transition: all 0.2s ease;
+      &:hover {
+        .card__title--hover {
+          opacity: 1;
+        }
+      }
     }
-    .card--title__hover {
-      /*color: blue;*/
+    .card__title--hover {
+      color: blue;
+      opacity: 0;
     }
-    .card--title--type {
+    .card__title__type {
       color: lightblue;
     }
-    .card--desc {
+    .card__desc {
       font-size: 16px;
       font-weight: normal;
       line-height: 18px;
     }
-    .card--bottom {
-      .card--bottom--meta {
+    .card__bottom {
+      .card__bottom__meta {
         float: left;
       }
-      .card--bottom--meta--date {
+      .card__bottom__meta__date {
 
       }
-      .card--bottom--meta--tags {
+      .card__bottom__meta__tags {
         & > span {
-
+          display: inline-block;
+          margin-right: 5px;
+          padding: 5px;
+          border: 1px solid #eee;
+          cursor: pointer;
         }
       }
-      .card--bottom--btn {
+      .card__bottom__btn {
         float: right;
       }
     }
