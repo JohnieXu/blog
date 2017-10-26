@@ -35,7 +35,7 @@
   h2 {
     font-size: 20px;
     &:hover {
-      color: lightblue;
+      color: $light-blue;
     }
   }
 }

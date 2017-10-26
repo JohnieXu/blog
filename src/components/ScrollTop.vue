@@ -60,12 +60,12 @@
     }
   }
 </script>
-<style lang="scss" type="stylesheet/scss">
+<style lang="scss" type="stylesheet/scss" scoped>
   $right: 30px;
   $bottom: 30px;
   $width: 40px;
   $height: 40px;
-  $bgColor: dodgerblue;
+  $bgColor: #007d83;
   $hoverColor: cadetblue;
 
   .scrollTop {
@@ -85,6 +85,7 @@
     z-index: 9999;
     &:hover {
       background: $hoverColor;
+      background: $bgColor;
     }
   }
   .toLeft-enter {
