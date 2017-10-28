@@ -2,7 +2,6 @@
   <div class="card">
     <v-image :text="shownArticles[index].name.replace(/\.md/, '')" :imageUrl="require(`~articles/imgs/${shownArticles[index].cover}`)" :url="shownArticles[index].name.replace(/\.md/, '')"></v-image>
     <slot name="article">
-      <!-- <h3 class="card__title"><a href=""><span class="card__title--hover">#</span>{{title}}<span class="card__title__type">{{type}}</span></a></h3> -->
       <p class="card__desc">{{shownArticles[index].desc}}</p>
       <div class="card__bottom clearfix">
         <div class="card__bottom__meta">
@@ -34,8 +33,7 @@ export default {
   },
   data () {
     return {
-      // cover: '../../articles/imgs/' + this.shownArticles[this.index].cover,
-      // date: Date.now(),
+      
     }
   },
   computed: {

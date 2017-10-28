@@ -55,7 +55,7 @@ const routes = [
 
 Object.keys(articlesInfo).forEach((key) => {
   routes.splice(2, 0, {
-    path: `/articles/${key.replace(/\.md$/, '')}`,
+    path: `articles/${key.replace(/\.md$/, '')}`,
     // component: () => import(`~articles/${key}`),
     components: {
       articles: () => import(`~articles/${key}`),

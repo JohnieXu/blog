@@ -25,11 +25,11 @@ export default {
       type: Array,
       default: () => [{
         text: '首页',
-        url: '/',
+        url: './',
         icon: 'home'
       }, {
         text: '文章',
-        url: '/articles',
+        url: 'articles',
         icon: 'folder',
         sub: [{
           text: 'html+css',
@@ -58,11 +58,11 @@ export default {
         }]
       }, {
         text: '项目',
-        url: '/works',
+        url: 'works',
         icon: 'book'
       },{
         text: '标签',
-        url: '/tags',
+        url: 'tags',
         icon: 'tags'
       }, {
         text: '搜索',
