@@ -4,10 +4,10 @@
       <i class="el-icon-information"></i>
     </section>
     <section>
-      <h1>page not found.</h1>
+      <h1>Page not found.</h1>
     </section>
     <section>
-      <h2><a href="/"><i class="el-icon-arrow-left"></i>回主页</a></h2>
+      <h2><router-link to="/"><i class="el-icon-arrow-left"></i>回主页</router-link></h2>
     </section>
   </div>
 </template>
@@ -19,8 +19,9 @@
 </script>
 
 <style type="stylesheets/scss" lang="scss">
+@import '../common/mixins.scss';
 .wrong {
-  padding: 30px;
+  padding: 50px;
   text-align: center;
   .el-icon-information {
     font-size: 60px;

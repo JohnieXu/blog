@@ -20,7 +20,7 @@ const routes = [
   {
     path: '/',
     components: {
-      test: () => import('~components/HelloWorld')
+      test: () => import('~views/Articlelist')
     }
   },
   {
@@ -45,15 +45,17 @@ const routes = [
       test: tags
     }
   },
-  // {
-  //   path: '*',
-  //   component: () => import('~views/404')
-  // }
+  {
+    path: '*',
+    components: {
+      articles: () => import('~views/404')
+    }
+  }
 ]
 
 Object.keys(articlesInfo).forEach((key) => {
   routes.splice(2, 0, {
-    path: `/articles/${key.replace(/\.md/, '')}`,
+    path: `/articles/${key.replace(/\.md$/, '')}`,
     // component: () => import(`~articles/${key}`),
     components: {
       articles: () => import(`~articles/${key}`),

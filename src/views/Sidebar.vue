@@ -3,7 +3,7 @@
     <div class="sidebar__inner">
       <div class="sidebar__author">
         <div class="sidebar__author__info">
-          <img src="http://iph.href.lu/50x50" alt="" class="avatar">
+          <img src="../assets/logo.png" alt="" class="avatar">
           <h2 class="nickname">JohnieXu</h2>
           <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <div class="links">
