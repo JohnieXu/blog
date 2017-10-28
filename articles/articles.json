@@ -1,14 +1,4 @@
 {
-  "markcook.md": {
-    "title": "Markcook",
-    "tags": [
-      "javascript",
-      "vue"
-    ],
-    "date": "2016-06-01",
-    "desc": "Markcook, a smart and beautiful markdown editor",
-    "cover": "markcook.png"
-  },
   "scion.md": {
     "title": "Scion",
     "tags": [
@@ -19,16 +9,15 @@
     "desc": "A light tool to generate projects in an easy way",
     "cover": "scion.png"
   },
-  "motto.md": {
-    "title": "Motto",
+  "vue-demo1.md": {
+    "title": "Scion",
     "tags": [
       "javascript",
-      "vue",
-      "tool"
+      "nodejs"
     ],
-    "date": "2016-08-05",
-    "desc": "Show your motto in an amazing way!",
-    "cover": "motto.png"
+    "date": "2016-07-01",
+    "desc": "A light tool to generate projects in an easy way",
+    "cover": "scion.png"
   },
   "sphinx.md": {
     "title": "Sphinx",
@@ -38,6 +27,56 @@
     "date": "2016-07-15",
     "desc": "A very light JS library which could encode a string to an image, or decode an image to a string",
     "cover": "sphinx.png"
+  },
+  "vue-demo3.md": {
+    "title": "Scion",
+    "tags": [
+      "javascript",
+      "nodejs"
+    ],
+    "date": "2016-07-01",
+    "desc": "A light tool to generate projects in an easy way",
+    "cover": "scion.png"
+  },
+  "vue-demo2.md": {
+    "title": "Scion",
+    "tags": [
+      "javascript",
+      "nodejs"
+    ],
+    "date": "2016-07-01",
+    "desc": "A light tool to generate projects in an easy way",
+    "cover": "scion.png"
+  },
+  "vue-demo4.md": {
+    "title": "Scion",
+    "tags": [
+      "javascript",
+      "nodejs"
+    ],
+    "date": "2016-07-01",
+    "desc": "A light tool to generate projects in an easy way",
+    "cover": "scion.png"
+  },
+  "vue-demo6.md": {
+    "title": "Scion",
+    "tags": [
+      "javascript",
+      "nodejs"
+    ],
+    "date": "2016-07-01",
+    "desc": "A light tool to generate projects in an easy way",
+    "cover": "scion.png"
+  },
+  "vue-demo7.md": {
+    "title": "Scion",
+    "tags": [
+      "javascript",
+      "nodejs"
+    ],
+    "date": "2016-07-01",
+    "desc": "A light tool to generate projects in an easy way",
+    "cover": "scion.png"
   },
   "vue-occupy.md": {
     "title": "Vue-Occupy",
@@ -49,5 +88,15 @@
     "date": "2016-08-01",
     "desc": "A Vue directive for occupying content places before the data has been loaded",
     "cover": "vue-occupy.png"
+  },
+  "vue-demo5.md": {
+    "title": "Scion",
+    "tags": [
+      "javascript",
+      "nodejs"
+    ],
+    "date": "2016-07-01",
+    "desc": "A light tool to generate projects in an easy way",
+    "cover": "scion.png"
   }
 }

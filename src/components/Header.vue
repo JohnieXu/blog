@@ -4,15 +4,11 @@
       <div class="site-brand-container">
         <div class="header__inner__logo"><a href="/">JohnieXu's Blog</a></div>
         <div class="header__inner__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-        <div class="header__inner__toggle"><div class="button"><i class="fa fa-navicon"></i></div></div>
+        <div class="header__inner__toggle" @click="toggleNav"><div class="button"><i class="fa fa-navicon"></i></div></div>
       </div>
-      <div class="site-nav-container">
+      <div class="site-nav-container" v-show="menuShow">
         <ul id="menu" class="header__menu">
-          <li class="menu-item" :class="{'menu-item--active': item.active}" v-for="item in nav" :key="item.text"><router-link :to="item.url" v-if="item.url" exact><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</router-link><a href="javascript:void(0);" v-if="!item.url"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</a></li>
-          <!-- <li class="menu-item menu-item--active"><a href=""><i class="menu-item__icon fa fa-home"></i>首页</a></li>
-          <li class="menu-item"><a href=""><i class="menu-item__icon fa fa-folder"></i>文章</a></li>
-          <li class="menu-item"><a href=""><i class="menu-item__icon fa fa-tags"></i>标签</a></li>
-          <li class="menu-item"><a href=""><i class="menu-item__icon fa fa-search"></i>搜索</a></li> -->
+          <li class="menu-item" v-for="item in nav" :key="item.text"><router-link :to="item.url" v-if="item.url"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</router-link><a href="javascript:void(0);" v-if="!item.url" @click.default="toggleSearch"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</a></li>
         </ul>
         <div id="search-container" class="header__inner__search">search...</div>
       </div>
@@ -21,6 +17,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
   name: 'header',
   props: {
@@ -29,8 +26,7 @@ export default {
       default: () => [{
         text: '首页',
         url: '/',
-        icon: 'home',
-        active: true
+        icon: 'home'
       }, {
         text: '文章',
         url: '/articles',
@@ -71,7 +67,8 @@ export default {
       }, {
         text: '搜索',
         url: '',
-        icon: 'search'
+        icon: 'search',
+        handler: 'toggleSearch'
       }]
     },
     input: {
@@ -84,14 +81,18 @@ export default {
     }
   },
   computed: {
-    fixed() {
-      return this.$store.state.headerFixed
-    }
+    // fixed() {
+    //   return this.$store.state.headerFixed
+    // }
+    ...mapState([
+        'menuShow'
+      ])
   },
   methods: {
-    handleSearch (e) {
-      console.log(e)
-    }
+    ...mapActions([
+        'toggleSearch',
+        'toggleNav'
+      ])
   }
 }
 </script>
@@ -111,14 +112,15 @@ export default {
   .header__inner {
     background: #fff;
    .site-brand-container {
-      padding: 20px 0;
+      padding: 20px 50px;
       color: #fff;
       // background: #222;
       background: $dark;
+      text-align: center;
     }
-  }
-  .site-brand-container {
-   text-align: center;
+    .site-nav-container {
+      transition: all 0.4s ease;
+    }
   }
   .header__inner__logo a {
    display: inline-block;
@@ -146,8 +148,8 @@ export default {
         text-align: left;
         line-height: inherit;
         transition: background-color 0.2s ease;
-        font-size: 14px;
-        &.router-link-active {
+        font-size: 16px;
+        &.router-link-exact-active {
           background: #F9F9F9;
           &:after {
             content: "";
@@ -166,20 +168,6 @@ export default {
         background: #F9F9F9;
       }
     }
-    // .menu-item--active {
-    //   background: #F9F9F9;
-    // }
-    // .menu-item--active:after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 50%;
-    //   right: 15px;
-    //   width: 6px;
-    //   height: 6px;
-    //   margin-top: -6px;
-    //   border-radius: 50%;
-    //   background-color: #bbb;
-    // } 
     .menu-item__icon {
       margin-right: 10px;
       color: $light-blue;

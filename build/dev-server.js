@@ -97,6 +97,9 @@ devMiddleware.waitUntilValid(() => {
   })
 })
 
+const watcher = require('./watcher')
+// watcher()
+
 module.exports = {
   ready: readyPromise,
   close: () => {

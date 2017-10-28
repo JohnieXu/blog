@@ -1,6 +1,6 @@
 <template>
   <div class="articlecontents">
-    <h2>contents</h2>
+    <h3 class="articlecontents__title"><i class="fa fa-list"></i>文章目录</h3>
     <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
   </div>
 </template>
@@ -28,7 +28,8 @@
           children: [{
             label: '3-1'
           }]
-        }]
+        }],
+        defaultProps: 'aaaa'
       }
     },
     methods: {
@@ -39,7 +40,22 @@
   }
 </script>
 <style type="stylesheet/scss" lang="scss">
+  @import '../common/mixins.scss';
   .articlecontents {
     background: #fff;
+  }
+  .articlecontents__title {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    text-indent: 6px;
+    .fa {
+      margin-right: 5px;
+      color: $light-blue;
+    }
+  }
+  .el-tree {
+    border: none;
+    text-indent: 6px;
   }
 </style>

@@ -7,9 +7,10 @@ const store = new Vuex.Store({
   debug: true,
   state: {
     // viewport: 'lg',
-    navShow: false,
+    menuShow: true,
     headerShow: true,
     headerFixed: false,
+    searchShow: false,
     allArticles: [],
     shownArticles: [],
     allTags: [],
@@ -17,19 +18,23 @@ const store = new Vuex.Store({
   },
   mutations: {
     /**
-     * 切换header显示
+     * toggle nav show
+     */
+    TOGGLE_NAV() {
+      this.state.menuShow = !this.state.menuShow
+    },
+    /**
+     * toggle header show
      */
     TOGGLE_HEADER() {
       this.state.headerFixed = !this.state.headerFixed
-      // debug && console.log('headerShow: ' + this.state.headerShow)
     },
     /**
-     * get the size of viewport
-     * @return {String} size of viewport, lg:>1200px md:>992px sm:>768px xs:<768px
+     * toggle search show
      */
-    // GET_VIEWPORT(size) {
-
-    // },
+    TOGGLE_SEARCH() {
+      this.state.searchShow = !this.state.searchShow
+    },
     GET_ALL_ARTICLES (_state, allArticles) {
       _state.allArticles = allArticles
     },
@@ -44,6 +49,20 @@ const store = new Vuex.Store({
     }
   },
   actions: {
+    /**
+     * toggle nav show
+     */
+    toggleNav ({ commit }) {
+      commit('TOGGLE_NAV')
+      console.log('toggle nav')
+    },
+    /**
+     * toggle search show
+     */
+    toggleSearch ({ commit }) {
+      commit('TOGGLE_SEARCH')
+      console.log('toggle search')
+    },
     /**
      * Get all the articles' information from articles.json
      * Generate tags list
