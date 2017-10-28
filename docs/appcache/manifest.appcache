@@ -1,17 +1,11 @@
 CACHE MANIFEST
-#ver:2017-10-28 22:00:00
+#ver:2017-10-28 22:12:30
 #plugin:4.8.4
 
 CACHE:
 ./static/img/fontawesome-webfont.912ec66.svg
-./static/fonts/fontawesome-webfont.b06871f.ttf
-./static/fonts/fontawesome-webfont.674f50d.eot
-./static/fonts/fontawesome-webfont.fee66e7.woff
-./static/fonts/fontawesome-webfont.af7ae50.woff2
-./static/fonts/element-icons.b02bdc1.ttf
 ./static/img/markcook.e1e7906.png
 ./static/img/vue-occupy.2d035f5.png
-./static/img/logo.82b9c7a.png
 ./static/img/motto.8ba9b74.png
 ./static/img/sphinx.0ea2e39.png
 ./static/img/scion.39da94f.png
@@ -35,9 +29,9 @@ CACHE:
 ./static/js/17.f661e9b5e702a2060f63.js
 ./static/js/18.db359ad126e2679fb8a2.js
 ./static/js/vendor.678576f2762ec78c2497.js
-./static/js/app.66f9942e1a5d6be24975.js
-./static/js/manifest.10ca8c3c3aaff3cc6cd3.js
-./static/css/app.a2fd1d0fe3dc40c97208861c4db101d7.css
+./static/js/app.4a750203cbd4f8726e2e.js
+./static/js/manifest.10abaea1d0bf6b72876b.js
+./static/css/app.fe5244a7345b8fe786faca9fc60f4f63.css
 
 NETWORK:
 *
