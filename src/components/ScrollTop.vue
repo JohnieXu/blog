@@ -28,10 +28,11 @@
     },
     methods: {
       scrollTop() {
+        let dpr = window.devicePixelRatio;
         let firstHeight = document.body.scrollTop || document.documentElement.scrollTop; // 开始回顶部时滑块离顶部高度
         let time = 0.4; // 预设动画持续时间
         // let speed = 8000; // 动画速度 px/s
-        let speed = Math.round(firstHeight / time) * 2;
+        let speed = Math.round(firstHeight / time) * 2 * dpr;
         let scrollTop = document.body.scrollTop || document.documentElement.scrollTop; // 初始scrollTop
         let scrollTopDOM = document.body || document.documentElement;
         let duration = scrollTop / speed * 1000; // 动画总时间

@@ -8,12 +8,19 @@ const hljs = require('highlight.js')
 const markdown = require('markdown-it')({
   /* highligh markdown https://github.com/markdown-it/markdown-it */
   highlight: function(str, lang) {
+    // if(lang && hljs.getLanguage(lang)) {
+    //   try {
+    //     return '<pre class="hljs"><code>' + hljs.highlight(lang, str, true).value + '</code></pre>'
+    //   } catch(__) {}
+    // }
+    // return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(str) + '</code></pre>'
+    
     if(lang && hljs.getLanguage(lang)) {
       try {
-        return '<pre class="hljs"><code>' + hljs.highlight(lang, str, true).value + '</code></pre>'
+        return hljs.highlight(lang, str, true).value
       } catch(__) {}
     }
-    return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(str) + '</code></pre>'
+    return markdown.utils.escapeHtml(str)
   },
   /* wrap markdown with article https://npm.taobao.org/package/vue-markdown-loader */
   wrapper: 'article'
@@ -94,7 +101,7 @@ module.exports = {
       {
         test: /\.md$/,
         loader: 'vue-markdown-loader',
-        // options: markdown
+        options: markdown
       }
     ]
   },

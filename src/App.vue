@@ -149,7 +149,7 @@ export default {
 }
 /* layout */
 #sidebar {
-  margin: 425px auto 20px;
+  margin: 360px auto 20px;
   @media all and (max-width: 992px) {
     display: none;
   }
@@ -325,11 +325,11 @@ export default {
 }
 .slide-right-enter-active,
 .slide-right-leave-active {
-  transition: all 0.4s ease 0.4s;
+  transition: all 0.4s cubic-bezier(.06,.25,.46,1.42) 0.4s;
 }
 .fade-left-active,
 .fade-left-leave-active {
-  transition: all 0.4s ease 0.4s;
+  transition: all 0.4s cubic-bezier(.06,.25,.46,1.42) 0.4s;
 }
 .slide-left-enter-to,
 .slide-left-leave {
@@ -342,7 +342,7 @@ export default {
 }
 .slide-left-enter-active,
 .slide-left-leave-active {
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(.06,.25,.46,1.42);
 }
 .slide-up-enter-to,
 .slide-up-leave {
@@ -355,7 +355,7 @@ export default {
 }
 .slide-up-enter-active,
 .slide-up-leave-active {
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(.06,.25,.46,1.42);
 }
 .slide-down-enter-to,
 .slide-down-leave {
@@ -368,6 +368,6 @@ export default {
 }
 .slide-down-enter-active,
 .slide-down-leave-active {
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(.06,.25,.46,1.42);
 }
 </style>

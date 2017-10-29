@@ -12,6 +12,10 @@
         type: String,
         default: '16:9'
       },
+      imageOpacity: {
+        type: Number,
+        default: 0.6
+      },
       text: String,
       url: String
     },
@@ -19,7 +23,8 @@
       return {
         imageStyle: {
           paddingBottom: (this.ratio || 56) + '%',
-          backgroundImage: `url('${this.imageUrl}')`
+          backgroundImage: `url('${this.imageUrl}')`,
+          opacity: `${this.imageOpacity}`
         }
       }
     },
@@ -41,19 +46,32 @@
 <style type="stylesheet/scss" lang="scss">
   .image {
     position: relative;
+    overflow: hidden;
+    &:hover .image__cover {
+      opacity: 1!important;
+      transform: scale(1.1);
+    }
   }
   .image__cover {
+    transition: all 0.2s ease;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
   }
   .image__title {
     position: absolute;
-    left: 15px;
-    bottom: 10px;
-    padding: 10px 0;
+    left: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px 10px 10px;
+    color: #555;
+    background: linear-gradient(to top, rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0));
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: nowrap;
   }
   .image__title--link {
     cursor: pointer;

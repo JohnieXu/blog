@@ -21,12 +21,18 @@ const routes = [
     path: '/',
     components: {
       test: () => import('~views/Articlelist')
+    },
+    meta: {
+      type: 'home'
     }
   },
   {
     path: '/articles',
     components: {
       articles: () => import('~views/Articlelist')
+    },
+    meta: {
+      type: 'articles'
     }
   },
   {
@@ -42,7 +48,7 @@ const routes = [
   },{
     path: '/tags',
     components: {
-      test: tags
+      test: () => import('~views/Taglist')
     }
   },
   {

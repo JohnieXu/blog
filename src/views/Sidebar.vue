@@ -16,17 +16,22 @@
       </div>
       <div class="sidebar__classes">
         <ul class="list row">
-          <li class="list-item col"><a href=""><span class="count">count</span><span class="classname">class</span></a></li>
-          <li class="list-item col"><a href=""><span class="count">count</span><span class="classname">class</span></a></li>
-          <li class="list-item col"><a href=""><span class="count">count</span><span class="classname">class</span></a></li>
+          <li class="list-item col"><a href=""><span class="count">{{tags.length}}</span><span class="classname">标签</span></a></li>
+          <li class="list-item col"><a href=""><span class="count">16</span><span class="classname">项目</span></a></li>
+          <li class="list-item col"><a href=""><span class="count">16</span><span class="classname">时光轴</span></a></li>
         </ul>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import { mapGetters } from 'vuex'
   export default {
-
+    computed: {
+      ...mapGetters([
+        'tags'
+        ])
+    }
   }
 </script>
 <style type="stylesheet/scss" lang="scss" scoped>
@@ -114,6 +119,7 @@
       }
       .classname {
         display: block;
+        margin-top: 6px;
         font-size: 14px;
         color: $text-gray;     
       }

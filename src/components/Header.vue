@@ -4,14 +4,16 @@
       <div class="site-brand-container">
         <div class="header__inner__logo"><a href="/">JohnieXu's Blog</a></div>
         <div class="header__inner__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-        <div class="header__inner__toggle" @click="toggleNav"><div class="button"><i class="fa fa-navicon"></i></div></div>
+        <div class="header__inner__toggle" @click="toggleMenu"><div class="button"><i class="fa fa-navicon"></i></div></div>
       </div>
-      <div class="site-nav-container" v-show="menuShow">
-        <ul id="menu" class="header__menu">
-          <li class="menu-item" v-for="item in nav" :key="item.text"><router-link :to="item.url" v-if="item.url"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</router-link><a href="javascript:void(0);" v-if="!item.url" @click.default="toggleSearch"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</a></li>
-        </ul>
-        <div id="search-container" class="header__inner__search">search...</div>
-      </div>
+      <transition name="slideDown">
+        <div class="site-nav-container" v-show="menuShow">
+          <ul id="menu" class="header__menu">
+            <li class="menu-item" v-for="item in nav" :key="item.text"><router-link class="menu-item-link" :to="item.url" v-if="item.url" @click.native="toggleMenu"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</router-link><a class="menu-item-link" href="javascript:void(0);" v-if="!item.url" @click.prevent="toggleSearch();toggleMenu()"><i :class="`menu-item__icon fa fa-${item.icon}`"></i>{{item.text}}</a></li>
+          </ul>
+          <div id="search-container" class="header__inner__search">search...</div>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -25,11 +27,11 @@ export default {
       type: Array,
       default: () => [{
         text: '首页',
-        url: './',
+        url: '/',
         icon: 'home'
       }, {
         text: '文章',
-        url: 'articles',
+        url: '/articles',
         icon: 'folder',
         sub: [{
           text: 'html+css',
@@ -58,11 +60,11 @@ export default {
         }]
       }, {
         text: '项目',
-        url: 'works',
+        url: '/works',
         icon: 'book'
       },{
         text: '标签',
-        url: 'tags',
+        url: '/tags',
         icon: 'tags'
       }, {
         text: '搜索',
@@ -91,7 +93,7 @@ export default {
   methods: {
     ...mapActions([
         'toggleSearch',
-        'toggleNav'
+        'toggleMenu'
       ])
   }
 }
@@ -117,9 +119,10 @@ export default {
       // background: #222;
       background: $dark;
       text-align: center;
+      box-shadow: 0 5px 15px #999;
     }
     .site-nav-container {
-      transition: all 0.4s ease;
+      transition: all 0.4s cubic-bezier(.06,.25,.46,1.42);
     }
   }
   .header__inner__logo a {
@@ -139,7 +142,7 @@ export default {
    .menu-item {
       position: relative;
       display: block;
-      a {
+      .menu-item-link {
         position: relative;
         display: inline-block;
         box-sizing: border-box;
@@ -188,8 +191,13 @@ export default {
       padding: 0;
       width: 240px;
       background: #fff;
-      /*box-shadow: initial;*/
-      /*border-radius: initial;*/
+      .site-brand-container {
+        padding: 20px 0;
+        box-shadow: none;
+      }
+      .site-nav-container {
+        display: block!important;
+      }
     }
     .header__inner__toggle {
       display: none;
@@ -222,6 +230,9 @@ export default {
   }
   .site-brand-container {
    position: relative;
+  }
+  .site-nav-container {
+    box-shadow: 0 3px 6px #ddd;
   }
   .header__inner__toggle {
    position: absolute;
