@@ -6,15 +6,16 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   debug: true,
   state: {
-    // viewport: 'lg',
-    menuShow: true,
+    menuShow: false,
     headerShow: true,
     headerFixed: false,
     searchShow: false,
     allArticles: [],
     shownArticles: [],
-    allTags: [],
-    selectedTags: []
+    // recArticles: [],
+    tags: [],
+    selectedTag: '',
+    tagsArticles: []
   },
   mutations: {
     /**
@@ -34,6 +35,7 @@ const store = new Vuex.Store({
      */
     TOGGLE_SEARCH() {
       this.state.searchShow = !this.state.searchShow
+      // this.state.menuShow = false
     },
     GET_ALL_ARTICLES (_state, allArticles) {
       _state.allArticles = allArticles
@@ -41,18 +43,24 @@ const store = new Vuex.Store({
     SHOW_ARTICLES (_state, shownArticles) {
       _state.shownArticles = shownArticles
     },
+    // REC_ARTICLES (_state, recArticles) {
+    //   _state.recArticles = recArticles
+    // },
     GET_TAGS (_state, tags) {
       _state.tags = tags
     },
     SELECT_TAG (_state, selectedTag) {
       _state.selectedTag = selectedTag
+    },
+    GET_TAGS_ARTICLES (_state, tagsArticles) {
+      _state.tagsArticles = tagsArticles
     }
   },
   actions: {
     /**
      * toggle nav show
      */
-    toggleNav ({ commit }) {
+    toggleMenu ({ commit }) {
       commit('TOGGLE_NAV')
       console.log('toggle nav')
     },
@@ -64,8 +72,7 @@ const store = new Vuex.Store({
       console.log('toggle search')
     },
     /**
-     * Get all the articles' information from articles.json
-     * Generate tags list
+     * Get all the articles from articles.json
      */
     getArticles ({ commit }) {
       const articles = require('~articles/articles.json')
@@ -91,6 +98,30 @@ const store = new Vuex.Store({
       commit('GET_TAGS', [...tagsSet])
     },
     /**
+     * Get all the tags from articles.json
+     */
+    getTags ({ commit }) {
+      const articles = require('~articles/articles.json')
+      const articlesArr = Object.keys(articles).map((name) => {
+        return {
+          name: name,
+          title: articles[name].title,
+          tags: articles[name].tags,
+          date: articles[name].date,
+          cover: articles[name].cover,
+          desc: articles[name].desc
+        }
+      })
+
+      const tagsSet = new Set()
+      articlesArr.forEach(({ tags }) => {
+        tags.forEach((tag) => {
+          tagsSet.add(tag)
+        })
+      })
+      commit('GET_TAGS', [...tagsSet])
+    },
+    /**
      * Select a tag and filt the article list that matches the tag
      * @param { String } tag tag name
      */
@@ -105,6 +136,18 @@ const store = new Vuex.Store({
         commit('SHOW_ARTICLES', state.allArticles)
         commit('SELECT_TAG', 'all')
       }
+    },
+    getTagsArticles ({ state, commit }) {
+      let tagArticles
+      state.tags.forEach((tag) => {
+        tagArticles = state.allArticles.filter(({ tags }) => {
+          return tags.includes(tag)
+        })
+        let len = state.tagsArticles.length
+        state.tagsArticles.splice(len, 0, {tag: tag, articles: tagArticles})
+      })
+
+      // commit('GET_TAGS_ARTICLES', tagsArticles)
     }
   },
   getters: {
@@ -116,6 +159,13 @@ const store = new Vuex.Store({
     },
     selectedTag (_state) {
       return _state.selectedTag
+    },
+    tagsArticles (_state) {
+      return _state.tagsArticles
+    },
+    recArticles (_state) {
+      let arr
+      return arr.push(_state.allArticles[2]).push(_state.allArticles[4])
     }
   }
 })

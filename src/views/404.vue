@@ -1,14 +1,14 @@
 <template>
   <div class="wrong">
-    <section>
+    <div>
       <i class="el-icon-information"></i>
-    </section>
-    <section>
+    </div>
+    <div>
       <h1>Page not found.</h1>
-    </section>
-    <section>
+    </div>
+    <div>
       <h2><router-link to="/"><i class="el-icon-arrow-left"></i>回主页</router-link></h2>
-    </section>
+    </div>
   </div>
 </template>
 

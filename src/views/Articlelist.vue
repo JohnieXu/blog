@@ -12,13 +12,19 @@
 import { mapGetters } from 'vuex'
   export default {
     name: 'Articlelist',
+    props: {
+      meta: Object
+    },
     components: {
       'v-card': () => import('@/components/Card')
     },
     computed: {
       ...mapGetters([
-        'shownArticles'
-      ])
+        'shownArticles','recArticles'
+      ]),
+      // articles() {
+      //   return this.meta.type == 'home' ? recArticles : shownArticles
+      // }
     },
     mounted() {
       this.$store.dispatch('getArticles')
