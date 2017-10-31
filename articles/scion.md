@@ -16,7 +16,7 @@ A light tool to generate projects in an easy way.
 npm install scion-cli -g
 ```
 or
-```
+```bash
 git clone https://github.com/jrainlau/scion.git
 
 cd scion && npm install
@@ -26,7 +26,7 @@ npm link
 
 # Usage
 Open your terminal and type `scion` or `scion -h` , you'll see the help infomation below:
-```
+```bash
   Usage: scion <command>
 
 

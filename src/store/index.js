@@ -164,8 +164,8 @@ const store = new Vuex.Store({
       return _state.tagsArticles
     },
     recArticles (_state) {
-      let arr
-      return arr.push(_state.allArticles[2]).push(_state.allArticles[4])
+      let arr = []
+      return arr.concat(_state.allArticles[2],_state.allArticles[4])
     }
   }
 })

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import articlesInfo from '~articles/articles.json'
-// import HelloWorld from '~components/HelloWorld'
 
 Vue.use(Router)
 
@@ -61,8 +60,7 @@ const routes = [
 
 Object.keys(articlesInfo).forEach((key) => {
   routes.splice(2, 0, {
-    path: `articles/${key.replace(/\.md$/, '')}`,
-    // component: () => import(`~articles/${key}`),
+    path: `/articles/${key.replace(/\.md$/, '')}`,
     components: {
       articles: () => import(`~articles/${key}`),
       articleContents: () => import('~views/ArticleContents')

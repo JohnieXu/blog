@@ -7,12 +7,9 @@ import router from './router/index'
 import store from './store/index'
 import ElementUI from 'element-ui'
 import * as OfflinePluginRuntime from 'offline-plugin/runtime'
-// import hljs from 'highlight.js'
-// import 'highlight.js/styles/googlecode.css'
-import 'highlight.js/styles/atom-one-light.css'
 // import skins from './common/skins.js'
 import 'element-ui/lib/theme-default/index.css'
-// import 'font-awesome/css/font-awesome.min.css'
+import 'highlight.js/styles/monokai-sublime.css'
 import 'font-awesome/css/font-awesome.min.css'
 import '~static/css/normalize.min.css'
 import './common/common.scss'
@@ -32,15 +29,6 @@ OfflinePluginRuntime.install({
     window.location.reload()
   }
 })
-
-// directive highlight.js
-// Vue.directive('highlight',function (el) {
-//   let blocks = el.querySelectorAll('pre code');
-//   console.log(el.querySelectorAll('pre'))
-//   blocks.forEach((i, block) => {
-//     hljs.highlightBlock(block)
-//   })
-// })
 
 /* eslint-disable no-new */
 new Vue({

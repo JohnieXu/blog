@@ -9,7 +9,7 @@
           <router-view name="articleContents"></router-view>
         </transition>
       </div>
-      <div class="content__article fl">
+      <div id="article" class="content__article fl">
         <transition :name="'slide-left'">
           <router-view name="articles"></router-view>
           <router-view name="test"></router-view>
@@ -125,6 +125,12 @@ export default {
       clear: both;
     }
   }
+  .content__aside {
+    @media all and (max-width: $sm) {
+      float: none;
+      margin: 120px 10px 0;
+    }
+  }
   .content__article {
     width: calc(100% - 240px - 15px);
     background: #fff;
@@ -133,8 +139,9 @@ export default {
       margin: 0 0 0 15px;
     }
     @media all and (max-width: $sm) {
-      width: 100%;
-      margin: 100px auto 0;
+      width: calc(100% - 20px);
+      // margin: 100px auto 0;
+      margin:  10px 10px;
     }
     &:after {
       display: block;

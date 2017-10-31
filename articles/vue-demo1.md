@@ -115,6 +115,37 @@ You can create your own templates repository, and push your templates in differe
 # License
 MIT.
 
+-----
+
+# TEST
+```javascript
+Object.keys(articlesInfo).forEach((key) => {
+  routes.splice(2, 0, {
+    path: `/articles/${key.replace(/\.md$/, '')}`,
+    // component: () => import(`~articles/${key}`),
+    components: {
+      articles: () => import(`~articles/${key}`),
+      articleContents: () => import('~views/ArticleContents')
+    }
+  })
+})
+```
+
+```javascript
+getTagsArticles ({ state, commit }) {
+  let tagArticles
+  state.tags.forEach((tag) => {
+    tagArticles = state.allArticles.filter(({ tags }) => {
+      return tags.includes(tag)
+    })
+    let len = state.tagsArticles.length
+    state.tagsArticles.splice(len, 0, {tag: tag, articles: tagArticles})
+  })
+
+  // commit('GET_TAGS_ARTICLES', tagsArticles)
+}
+```
+
 
 
 
