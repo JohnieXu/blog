@@ -1,6 +1,6 @@
 <template>
   <div class="image">
-    <div class="image__cover" :style="imageStyle"></div>
+    <div class="image__cover" :style="imageStyle" @click="handleClick"></div>
     <div class="image__title" :class="{'image__title--link': url}" @click="handleClick">{{text}}</div>
   </div>
 </template>

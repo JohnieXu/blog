@@ -13,6 +13,7 @@ const store = new Vuex.Store({
     allArticles: [],
     shownArticles: [],
     // recArticles: [],
+    articleContents: [],
     tags: [],
     selectedTag: '',
     tagsArticles: []
@@ -54,6 +55,9 @@ const store = new Vuex.Store({
     },
     GET_TAGS_ARTICLES (_state, tagsArticles) {
       _state.tagsArticles = tagsArticles
+    },
+    GET_ARTICLE_CONTENTS (_state, articleContents) {
+      _state.articleContents = articleContents
     }
   },
   actions: {
@@ -148,6 +152,13 @@ const store = new Vuex.Store({
       })
 
       // commit('GET_TAGS_ARTICLES', tagsArticles)
+    },
+    getArticleContents ({ state, commit }, articleContents) {
+      if (articleContents) {
+      commit('GET_ARTICLE_CONTENTS', articleContents)
+      } else {
+        commit('GET_ARTICLE_CONTENTS', [])
+      }
     }
   },
   getters: {
@@ -166,6 +177,9 @@ const store = new Vuex.Store({
     recArticles (_state) {
       let arr = []
       return arr.concat(_state.allArticles[2],_state.allArticles[4])
+    },
+    articleContents (_state) {
+      return _state.articleContents
     }
   }
 })

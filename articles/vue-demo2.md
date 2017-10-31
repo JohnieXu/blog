@@ -1,9 +1,9 @@
 {
-  "title": "Scion",
-  "tags": ["javascript", "nodejs"],
+  "title": "vue-demo2",
+  "tags": ["Vue.js", "nodejs", "CSS"],
   "date": "2016-07-01",
   "desc": "A light tool to generate projects in an easy way",
-  "cover": "scion.png"
+  "cover": "sphinx.png"
 }
 
 ![img](./imgs/scion.png)

@@ -15,8 +15,7 @@ const markdown = require('markdown-it')({
     }
     return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(str) + '</code></pre>'
   },
-  linkify: true,
-  wrapper: 'article'
+  linkify: true
 })
 
 function resolve (dir) {

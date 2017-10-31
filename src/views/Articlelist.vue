@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
+  const contents = require('~articles/articles.json')
   export default {
     name: 'Articlelist',
     props: {
@@ -28,6 +29,7 @@ import { mapGetters } from 'vuex'
     },
     mounted() {
       this.$store.dispatch('getArticles')
+      this.$store.dispatch('getArticleContents', contents)
     }
   }
 </script> 

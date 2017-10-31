@@ -5,6 +5,7 @@
   </div>
 </template>
 <script>
+  import { mapGetters } from 'vuex'
   export default {
     name: "ArticleContents",
     data() {
@@ -32,10 +33,18 @@
         defaultProps: 'aaaa'
       }
     },
+    computed: {
+      ...mapGetters([
+        'articleContents'
+        ])
+    },
     methods: {
       handleNodeClick(data) {
         console.log(data)
       }
+    },
+    mounted() {
+      console.log(this.$route)
     }
   }
 </script>

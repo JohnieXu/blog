@@ -64,6 +64,9 @@ Object.keys(articlesInfo).forEach((key) => {
     components: {
       articles: () => import(`~articles/${key}`),
       articleContents: () => import('~views/ArticleContents')
+    },
+    meta: {
+      name: key
     }
   })
 })
