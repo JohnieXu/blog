@@ -12,7 +12,6 @@
       <div id="article" class="content__article fl">
         <transition :name="'slide-left'">
           <router-view name="articles"></router-view>
-          <router-view name="test"></router-view>
         </transition>
       </div>
     </div>
@@ -133,6 +132,8 @@ export default {
   }
   .content__article {
     width: calc(100% - 240px - 15px);
+    padding: 0 10px;
+    box-sizing: border-box;
     background: #fff;
     @media all and (min-width: $sm) {
       float: left;

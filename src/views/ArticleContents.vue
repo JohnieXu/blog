@@ -1,7 +1,7 @@
 <template>
   <div class="articlecontents">
     <h3 class="articlecontents__title"><i class="fa fa-list"></i>文章目录</h3>
-    <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+    <el-tree :data="contents" :props="defaultProps" :default-expand-all="true" empty-text="没有目录" @node-click="handleNodeClick"></el-tree>
   </div>
 </template>
 <script>
@@ -10,33 +10,33 @@
     name: "ArticleContents",
     data() {
       return {
-        data: [{
-          label: '1',
-          children: [{
-            label: '1-1'
-          },{
-            label: '1-2'
-          }]
-        },{
-          label: '2',
-          children: [{
-            label: '2-1'
-          },{
-            label: '2-2'
-          }]
-        },{
-          label: '3',
-          children: [{
-            label: '3-1'
-          }]
-        }],
-        defaultProps: 'aaaa'
+        defaultProps: {
+          label: 'name',
+          children: 'descendants'
+        }
       }
     },
     computed: {
       ...mapGetters([
-        'articleContents'
-        ])
+        'shownArticles',
+        'allArticles'
+        ]),
+      contents() {
+        if (this.shownArticles.length == 0) {
+          this.$store.dispatch('getArticles')
+          for (let i = 0, len = this.allArticles.length; i < len; i++) {
+            if (this.allArticles[i].name == this.$route.matched[0].meta.name) {
+              return this.allArticles[i].contents
+            }
+          }
+        } else {
+          for (let i = 0, len = this.shownArticles.length; i < len; i++) {
+            if (this.shownArticles[i].name == this.$route.matched[0].meta.name) {
+              return this.shownArticles[i].contents
+            }
+          }
+        }
+      }
     },
     methods: {
       handleNodeClick(data) {
@@ -44,7 +44,13 @@
       }
     },
     mounted() {
-      console.log(this.$route)
+      // console.log(this.$route)
+
+      for (let i = 0, len = this.shownArticles.length; i < len; i++) {
+        if (this.shownArticles[i].name == this.$route.matched[0].meta.name) {
+          console.log(this.shownArticles[i])
+        }
+      }
     }
   }
 </script>

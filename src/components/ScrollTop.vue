@@ -66,8 +66,8 @@
   $bottom: 30px;
   $width: 40px;
   $height: 40px;
-  $bgColor: #007d83;
-  $hoverColor: cadetblue;
+  $bgColor: #00ADB5;
+  $hoverColor: darken($bgColor, 2);
 
   .scrollTop {
     position: fixed;

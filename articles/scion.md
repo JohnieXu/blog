@@ -11,7 +11,7 @@
 # SCION
 A light tool to generate projects in an easy way.
 
-# Installation
+## Installation
 ```
 npm install scion-cli -g
 ```
@@ -24,7 +24,7 @@ cd scion && npm install
 npm link
 ```
 
-# Usage
+## Usage
 Open your terminal and type `scion` or `scion -h` , you'll see the help infomation below:
 ```bash
   Usage: scion <command>
@@ -45,7 +45,7 @@ Open your terminal and type `scion` or `scion -h` , you'll see the help infomati
 
 > Note that if you are using `MacOS`, `sudo` was required while using commands `add` and `delete`.
 
-# Commands
+## Commands
 ### add | a
 This command would help you to add a new template to the `templates.json`, which will be used by `Scion` to generate projects.
 ```
@@ -106,13 +106,13 @@ $ scion delete
 ✔ Template has been deleted successfully
 ```
 
-# Template
+## Template
 The most important part of Scion is `template`. All templates' infomation were list in the `templates.json`.
 A template means a project sample, which has a simple or complex file structure.
 
 You can create your own templates repository, and push your templates in different branches. All you need to do then is to add the templates into Scion's `templates.json`.
 
-# License
+## License
 MIT.
 
 

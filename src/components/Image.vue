@@ -14,7 +14,7 @@
       },
       imageOpacity: {
         type: Number,
-        default: 0.6
+        default: 0.7
       },
       text: String,
       url: String
@@ -44,6 +44,7 @@
   }
 </script>
 <style type="stylesheet/scss" lang="scss">
+  $linear-gradient: linear-gradient(to top, rgba(200, 200, 200, 0.6), rgba(250, 250, 250, 0));
   .image {
     position: relative;
     overflow: hidden;
@@ -66,7 +67,7 @@
     width: 100%;
     padding: 20px 10px 10px;
     color: #555;
-    background: linear-gradient(to top, rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0));
+    background: $linear-gradient;
     font-size: 24px;
     font-weight: 500;
     overflow: hidden;

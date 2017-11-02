@@ -14,21 +14,21 @@ import 'font-awesome/css/font-awesome.min.css'
 import '~static/css/normalize.min.css'
 import './common/common.scss'
 import './common/mixins.scss'
-import './common/markdown2.scss'
+import './common/markdown.scss'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
-OfflinePluginRuntime.install({
-  onUpdateReady () {
-    OfflinePlugin.applyUpdate()
-  },
-  onUpdated () {
-    console.log('updated')
-    window.location.reload()
-  }
-})
+// OfflinePluginRuntime.install({
+//   onUpdateReady () {
+//     OfflinePlugin.applyUpdate()
+//   },
+//   onUpdated () {
+//     console.log('updated')
+//     window.location.reload()
+//   }
+// })
 
 /* eslint-disable no-new */
 new Vue({

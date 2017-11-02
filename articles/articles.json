@@ -13,62 +13,63 @@
         "level": 1,
         "id": "scion",
         "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
         "descendants": [
           {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
+            "level": 2,
+            "id": "installation",
+            "name": "Installation",
             "descendants": []
           },
           {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
+            "level": 2,
+            "id": "usage",
+            "name": "Usage",
             "descendants": []
           },
           {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
+            "level": 2,
+            "id": "commands",
+            "name": "Commands",
+            "descendants": [
+              {
+                "level": 3,
+                "id": "add-a",
+                "name": "add | a",
+                "descendants": []
+              },
+              {
+                "level": 3,
+                "id": "list-l",
+                "name": "list | l",
+                "descendants": []
+              },
+              {
+                "level": 3,
+                "id": "init-i",
+                "name": "init | i",
+                "descendants": []
+              },
+              {
+                "level": 3,
+                "id": "delete-d",
+                "name": "delete | d",
+                "descendants": []
+              }
+            ]
+          },
+          {
+            "level": 2,
+            "id": "template",
+            "name": "Template",
             "descendants": []
           },
           {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
+            "level": 2,
+            "id": "license",
+            "name": "License",
             "descendants": []
           }
         ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
       }
     ]
   },
@@ -117,597 +118,6 @@
             "descendants": []
           }
         ]
-      }
-    ]
-  },
-  "vue-demo2.md": {
-    "title": "vue-demo2",
-    "tags": [
-      "Vue.js",
-      "nodejs",
-      "CSS"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "sphinx.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
-      }
-    ]
-  },
-  "vue-demo1.md": {
-    "title": "Scion",
-    "tags": [
-      "javascript",
-      "nodejs"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "scion.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "test",
-        "name": "TEST",
-        "descendants": []
-      }
-    ]
-  },
-  "vue-demo4.md": {
-    "title": "Scion",
-    "tags": [
-      "javascript",
-      "nodejs"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "scion.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
-      }
-    ]
-  },
-  "vue-demo3.md": {
-    "title": "Scion",
-    "tags": [
-      "javascript",
-      "nodejs"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "scion.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
-      }
-    ]
-  },
-  "vue-demo6.md": {
-    "title": "Scion",
-    "tags": [
-      "javascript",
-      "nodejs"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "scion.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
-      }
-    ]
-  },
-  "vue-demo5.md": {
-    "title": "Scion",
-    "tags": [
-      "javascript",
-      "nodejs"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "scion.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
-      }
-    ]
-  },
-  "vue-demo7.md": {
-    "title": "Scion",
-    "tags": [
-      "javascript",
-      "nodejs"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "scion.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
-      }
-    ]
-  },
-  "vue-demo8.md": {
-    "title": "Scion",
-    "tags": [
-      "Bootstrap",
-      "CSS"
-    ],
-    "date": "2016-07-01",
-    "desc": "A light tool to generate projects in an easy way",
-    "cover": "scion.png",
-    "contents": [
-      {
-        "level": 1,
-        "id": "scion",
-        "name": "SCION",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "installation",
-        "name": "Installation",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "usage",
-        "name": "Usage",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "commands",
-        "name": "Commands",
-        "descendants": [
-          {
-            "level": 3,
-            "id": "add-a",
-            "name": "add | a",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "list-l",
-            "name": "list | l",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "init-i",
-            "name": "init | i",
-            "descendants": []
-          },
-          {
-            "level": 3,
-            "id": "delete-d",
-            "name": "delete | d",
-            "descendants": []
-          }
-        ]
-      },
-      {
-        "level": 1,
-        "id": "template",
-        "name": "Template",
-        "descendants": []
-      },
-      {
-        "level": 1,
-        "id": "license",
-        "name": "License",
-        "descendants": []
       }
     ]
   },

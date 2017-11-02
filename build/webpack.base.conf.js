@@ -5,7 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const OfflinePlugin = require('offline-plugin')
 const hljs = require('highlight.js')
-const markdown = require('markdown-it')({
+let markdown = require('markdown-it')({
   /* highligh markdown https://github.com/markdown-it/markdown-it */
   highlight: function(str, lang) {
     if(lang && hljs.getLanguage(lang)) {
@@ -17,6 +17,7 @@ const markdown = require('markdown-it')({
   },
   linkify: true
 })
+markdown.wrapper = 'article'
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -98,6 +99,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new OfflinePlugin()
+    // new OfflinePlugin()
   ]
 }

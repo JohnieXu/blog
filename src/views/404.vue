@@ -18,7 +18,7 @@
   }
 </script>
 
-<style type="stylesheets/scss" lang="scss">
+<style type="stylesheets/scss" lang="scss" scoped>
 @import '../common/mixins.scss';
 .wrong {
   padding: 50px;

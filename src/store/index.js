@@ -87,7 +87,8 @@ const store = new Vuex.Store({
           tags: articles[name].tags,
           date: articles[name].date,
           cover: articles[name].cover,
-          desc: articles[name].desc
+          desc: articles[name].desc,
+          contents: articles[name].contents
         }
       })
       commit('GET_ALL_ARTICLES', articlesArr)
@@ -113,7 +114,8 @@ const store = new Vuex.Store({
           tags: articles[name].tags,
           date: articles[name].date,
           cover: articles[name].cover,
-          desc: articles[name].desc
+          desc: articles[name].desc,
+          contents: articles[name].contents
         }
       })
 
@@ -162,6 +164,9 @@ const store = new Vuex.Store({
     }
   },
   getters: {
+    allArticles (_state) {
+      return _state.allArticles
+    },
     shownArticles (_state) {
       return _state.shownArticles
     },
@@ -176,7 +181,9 @@ const store = new Vuex.Store({
     },
     recArticles (_state) {
       let arr = []
-      return arr.concat(_state.allArticles[2],_state.allArticles[4])
+      let len = _state.allArticles.length
+      let num = Math.floor(Math.random() * len)
+      return arr.concat(_state.allArticles[num])
     },
     articleContents (_state) {
       return _state.articleContents

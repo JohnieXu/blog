@@ -2,7 +2,9 @@
   <div id="articlelist">
     <el-row>
       <el-col class="article__box" :xs="24" :sm="24" :md="12" :lg="12" v-for="(item, index) in shownArticles" :key="item.name">
-        <v-card :index="index" :title="item.name.replace(/\.md/, '')"></v-card>
+        <transition name="fade">
+          <v-card :index="index" :title="item.name.replace(/\.md/, '')"></v-card>
+        </transition>
       </el-col>
     </el-row>
   </div>
@@ -10,7 +12,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  const contents = require('~articles/articles.json')
+  // const contents = require('~articles/articles.json')
   export default {
     name: 'Articlelist',
     props: {
@@ -27,9 +29,14 @@
       //   return this.meta.type == 'home' ? recArticles : shownArticles
       // }
     },
+    methods: {
+      formatContents(obj) {
+
+      }
+    },
     mounted() {
       this.$store.dispatch('getArticles')
-      this.$store.dispatch('getArticleContents', contents)
+      // this.$store.dispatch('getArticleContents', contents)
     }
   }
 </script> 
