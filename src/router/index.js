@@ -72,8 +72,9 @@ Object.keys(articlesInfo).forEach((key) => {
 })
 
 const router = new Router({
-  mode: 'history',
-  base: __dirname,
+  // mode: 'history',
+  // base: __dirname,
+  base: 'blog',
   routes: routes
 })
 
